@@ -506,15 +506,17 @@ Employer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1179</x>
+      <x>1170</x>
       <y>405</y>
       <w>117</w>
       <h>117</h>
     </coordinates>
-    <panel_attributes>Registered by ^
+    <panel_attributes>1
+
+Registered by ^
 lt=x-&gt;
-m1 = *
-m2 = b</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+
+0..*</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

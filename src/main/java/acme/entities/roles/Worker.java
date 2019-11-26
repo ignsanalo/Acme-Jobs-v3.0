@@ -1,5 +1,5 @@
 
-package acme.entities.workers;
+package acme.entities.roles;
 
 import javax.validation.constraints.NotBlank;
 
@@ -18,5 +18,9 @@ public class Worker extends UserRole {
 
 	@NotBlank
 	private String				skills;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 }
