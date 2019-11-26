@@ -19,4 +19,8 @@ public class Worker extends UserRole {
 	@NotBlank
 	private String				skills;
 
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
 }
