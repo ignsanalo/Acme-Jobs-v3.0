@@ -1,5 +1,5 @@
 
-package acme.entities.workers;
+package acme.entities.roles;
 
 import javax.validation.constraints.NotBlank;
 
