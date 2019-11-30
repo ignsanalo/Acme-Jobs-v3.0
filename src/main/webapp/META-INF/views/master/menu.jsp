@@ -79,8 +79,11 @@
 			<acme:menu-suboption code="master.menu.user-account.offer.list" action="/authenticated/offer/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.requests.list" action="/authenticated/requests/list" />
-
-
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+		<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list" />
+			<acme:menu-separator />
 		</acme:menu-option>
 
 

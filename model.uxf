@@ -519,4 +519,22 @@ lt=x-&gt;
 0..*</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1377</x>
+      <y>504</y>
+      <w>306</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Application
+--
++ reference: String {Unique,NotBlank,Lenght(min=5,max=15)}
++ moment: Date {Temporal{TIMESTAMP}, PAST}
++ status: Enum {PENDING, ACCEPTED, REJECTED}
++ statement: String {NotBlank}
++ skills: String {NotBlank}
++ qualifications: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
