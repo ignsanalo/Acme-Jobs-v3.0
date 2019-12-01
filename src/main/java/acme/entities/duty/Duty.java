@@ -1,23 +1,13 @@
 
-package acme.entities.jobs;
+package acme.entities.duty;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
-
 import acme.entities.descriptor.Descriptor;
-import acme.entities.roles.Employer;
-import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Job extends DomainEntity {
+public class Duty extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -33,39 +23,19 @@ public class Job extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Column(unique = true)
-	@NotBlank
-	@Length(min = 5, max = 10)
-	private String				reference;
-
 	@NotBlank
 	private String				title;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	private Date				deadline;
-
-	@NotNull
-	@Valid
-	private Money				salary;
 
 	@NotBlank
 	private String				description;
 
-	@URL
-	private String				moreInfo;
-
-	private boolean				finalMode;
-
-	@NotNull
-	@Valid
-	private Descriptor			descriptor;
+	private Double				percentage;
 
 	// Relationships ----------------------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer			employer;
+	private Descriptor			descriptor;
 
 }
