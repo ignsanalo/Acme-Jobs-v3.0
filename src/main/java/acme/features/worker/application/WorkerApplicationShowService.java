@@ -15,7 +15,7 @@ import acme.framework.services.AbstractShowService;
 public class WorkerApplicationShowService implements AbstractShowService<Worker, Application> {
 
 	@Autowired
-	WorkerApplicationRepository repository;
+	private WorkerApplicationRepository repository;
 
 
 	@Override
@@ -32,7 +32,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		application = this.repository.findOneApplicationById(applicationId);
 		worker = application.getWorker();
 		principal = request.getPrincipal();
-		result =
+		result = worker.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
