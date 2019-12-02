@@ -326,7 +326,32 @@
 		<property name="skills" value="Easy to use" />
 		<property name="qualifications" value="Good application" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job1" />
 	</bean>
+	
+	<bean name="application2" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APP1:WOR2" />
+		<property name="moment" value="25/11/2019" />
+		<property name="status" value="Pending" />
+		<property name="statement" value="This is a short statement" />
+		<property name="skills" value="Easy to use" />
+		<property name="qualifications" value="Good application" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job1" />
+	</bean>
+	
+	<bean name="application3" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APP1:WOR3" />
+		<property name="moment" value="27/11/2019" />
+		<property name="status" value="Pending" />
+		<property name="statement" value="This is a short statement" />
+		<property name="skills" value="Easy to use" />
+		<property name="qualifications" value="Good application" />
+		<property name="worker" ref="worker1Worker" />
+		<property name="job" ref="job2" />
+	</bean>
+	
+	
 	
 	
 
