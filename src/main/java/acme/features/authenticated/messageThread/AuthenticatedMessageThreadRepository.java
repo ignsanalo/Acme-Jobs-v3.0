@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.messages;
+package acme.features.authenticated.messageThread;
 
 import java.util.Collection;
 
@@ -23,10 +23,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedMessageThreadRepository extends AbstractRepository {
 
-	@Query("select m from MessageThread m where m.id = ?1")
+	@Query("select m from MessageThread m where m.id = ?1 ")
 	MessageThread findOneById(int id);
 
-	@Query("select m from MessageThread m")
-	Collection<MessageThread> findManyAll();
+	@Query("select m from MessageThread m join m.users users where users.id = ?1")
+	Collection<MessageThread> findManyByAuthId(int AuthId);
 
 }

@@ -1,5 +1,5 @@
 /*
- * AuthenticatedMessageThreadUpdateService.java
+ * AuthenticatedRequestsCreateService.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -10,9 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.messages;
-
-import java.util.Collection;
+package acme.features.authenticated.messageThread;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,18 +19,18 @@ import acme.entities.messages.MessageThread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedMessageThreadListService implements AbstractListService<Authenticated, MessageThread> {
+public class AuthenticatedMessageThreadShowService implements AbstractShowService<Authenticated, MessageThread> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private AuthenticatedMessageThreadRepository repository;
 
+	// AbstractCreateService<Authenticated, MessageThread> ---------------------------
 
-	// AbstractUpdateService<Authenticated, MessageThread> interface -----------------
 
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
@@ -51,15 +49,16 @@ public class AuthenticatedMessageThreadListService implements AbstractListServic
 	}
 
 	@Override
-	public Collection<MessageThread> findMany(final Request<MessageThread> request) {
-
+	public MessageThread findOne(final Request<MessageThread> request) {
 		assert request != null;
 
-		Collection<MessageThread> result;
+		MessageThread result;
+		int id;
 
-		result = this.repository.findManyAll();
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
-
 	}
+
 }

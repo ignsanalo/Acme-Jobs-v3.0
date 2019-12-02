@@ -121,6 +121,7 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
+        `message_thread_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -239,6 +240,11 @@
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `message` 
+       add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `message_thread_authenticated` 
        add constraint `FKsnymblhgu3dixq3t2qhptr4x2` 

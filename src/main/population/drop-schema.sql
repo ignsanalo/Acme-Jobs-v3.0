@@ -23,6 +23,10 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `message` 
+       drop 
+       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+
     alter table `message_thread_authenticated` 
        drop 
        foreign key `FKsnymblhgu3dixq3t2qhptr4x2`;

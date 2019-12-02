@@ -1,5 +1,5 @@
 /*
- * AuthenticatedMessageThreadController.java
+ * AuthenticatedMessageController.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.messages;
+package acme.features.authenticated.message;
 
 import javax.annotation.PostConstruct;
 
@@ -18,34 +18,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.messages.MessageThread;
+import acme.components.CustomCommand;
+import acme.entities.messages.Message;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/messageThread/")
-public class AuthenticatedMessageThreadController extends AbstractController<Authenticated, MessageThread> {
+@RequestMapping("/authenticated/message/")
+public class AuthenticatedMessageController extends AbstractController<Authenticated, Message> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedMessageThreadListService	listService;
+	private AuthenticatedMessageListByThreadService	listByThreadService;
 
 	@Autowired
-	private AuthenticatedMessageThreadListService	createService;
-
-	@Autowired
-	private AuthenticatedMessageThreadShowService	showService;
+	private AuthenticatedMessageShowService			showService;
 
 
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addCustomCommand(CustomCommand.LIST_BY_THREAD, BasicCommand.LIST, this.listByThreadService);
 	}
 
 }

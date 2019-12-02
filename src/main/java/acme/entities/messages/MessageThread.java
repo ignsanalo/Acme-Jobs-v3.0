@@ -35,9 +35,9 @@ public class MessageThread extends DomainEntity {
 	@Length(max = 255)
 	private String						title;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	@NotNull
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date						moment;
 
 	@NotNull
