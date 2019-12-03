@@ -1,5 +1,5 @@
 
-package acme.entities.jobs;
+package acme.entities.applications;
 
 import java.util.Date;
 
@@ -11,12 +11,12 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
-import acme.entities.roles.Employer;
-import acme.framework.datatypes.Money;
+import acme.entities.jobs.Job;
+import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,43 +24,50 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Job extends DomainEntity {
+public class Application extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
+
 
 	// Attributes -------------------------------------------------------------
 
+	public enum ApplicationStatus {
+		PENDING, ACCEPTED, REJECTED
+	}
+
+
 	@Column(unique = true)
 	@NotBlank
-	@Length(min = 5, max = 10)
+	@Length(min = 5, max = 15)
 	private String				reference;
 
-	@NotBlank
-	private String				title;
-
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				deadline;
+	@Past
+	private Date				moment;
 
-	@NotNull
-	@Valid
-	private Money				salary;
+	private ApplicationStatus	status;
 
 	@NotBlank
-	private String				description;
+	private String				statement;
 
-	@URL
-	private String				moreInfo;
+	@NotBlank
+	private String				skills;
 
-	private boolean				finalMode;
+	@NotBlank
+	private String				qualifications;
 
 	// Relationships ----------------------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Employer			employer;
+	private Worker				worker;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Job					job;
 
 }
