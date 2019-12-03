@@ -1,8 +1,6 @@
 
 package acme.features.job.application;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +8,13 @@ import acme.entities.applications.Application;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class JobApplicationListService implements AbstractListService<Employer, Application> {
+public class EmployerJobApplicationShowService implements AbstractShowService<Employer, Application> {
 
 	@Autowired
-	private JobApplicationRepository repository;
+	private EmployerJobApplicationRepository repository;
 
 
 	@Override
@@ -33,18 +30,19 @@ public class JobApplicationListService implements AbstractListService<Employer, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "status");
+		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications");
+
 	}
 
 	@Override
-	public Collection<Application> findMany(final Request<Application> request) {
+	public Application findOne(final Request<Application> request) {
 		assert request != null;
 
-		Collection<Application> result;
-		Principal principal;
+		Application result;
+		int id;
 
-		principal = request.getPrincipal();
-		result = this.repository.findManyByJobId(principal.getActiveRoleId());
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneApplicationById(id);
 
 		return result;
 	}

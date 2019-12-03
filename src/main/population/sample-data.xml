@@ -320,8 +320,8 @@
 	
 	<bean name="application1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APP1:WOR1" />
-		<property name="moment" value="20/11/2019" />
-		<property name="status" value="Pending" />
+		<property name="moment" value="2019/11/12 22:12" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a short statement" />
 		<property name="skills" value="Easy to use" />
 		<property name="qualifications" value="Good application" />
@@ -331,8 +331,8 @@
 	
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APP1:WOR2" />
-		<property name="moment" value="25/11/2019" />
-		<property name="status" value="Pending" />
+		<property name="moment" value="2019/11/25 19:32" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a short statement" />
 		<property name="skills" value="Easy to use" />
 		<property name="qualifications" value="Good application" />
@@ -342,8 +342,8 @@
 	
 	<bean name="application3" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APP1:WOR3" />
-		<property name="moment" value="27/11/2019" />
-		<property name="status" value="Pending" />
+		<property name="moment" value="2019/11/27 13:53" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a short statement" />
 		<property name="skills" value="Easy to use" />
 		<property name="qualifications" value="Good application" />

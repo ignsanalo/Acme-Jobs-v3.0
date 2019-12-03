@@ -10,7 +10,7 @@ import acme.entities.applications.Application;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface JobApplicationRepository extends AbstractRepository {
+public interface EmployerJobApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Application a where a.id = ?1")
 	Application findOneApplicationById(int id);

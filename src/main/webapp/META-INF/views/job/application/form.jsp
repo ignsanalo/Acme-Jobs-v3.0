@@ -23,5 +23,5 @@
 	<acme:form-textbox code="job.application.form.label.skills" path="skills" />
 	<acme:form-textbox code="job.application.form.label.qualifications" path="qualifications" />
 	
-	<acme:form-return code="worker.application.form.button.return" />
+	<acme:form-return code="job.application.form.button.return" />
 </acme:form>
