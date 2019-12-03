@@ -17,5 +17,5 @@ authenticated.messageThread.form.label.show-messages = Messages
 authenticated.messageThread.form.button.return = Return
 
 authenticated.messageThread.list.label.title = Title
-authenticated.messageThread.list.label.users = Users
+authenticated.messageThread.list.label.moment = Moment
 

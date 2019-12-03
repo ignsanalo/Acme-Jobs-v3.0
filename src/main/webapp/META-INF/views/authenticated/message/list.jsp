@@ -17,5 +17,6 @@
 
 <acme:list>
 	<acme:list-column code="authenticated.message.list.label.title" path="title" width="50%" />
-	<acme:list-column code="authenticated.message.list.label.moment" path="moment" width="50%" />
+	<acme:list-column code="authenticated.message.list.label.moment" path="moment" width="30%" />
+	<acme:list-column code="authenticated.message.list.label.tags" path="tags" width="20%" />
 </acme:list>

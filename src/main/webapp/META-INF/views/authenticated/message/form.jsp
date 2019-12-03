@@ -20,7 +20,6 @@
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment" />
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags" />
 	<acme:form-textbox code="authenticated.message.form.label.body" path="body" />
-	<acme:form-textbox code="authenticated.message.form.label.message-thread" path="messageThread" />
 	<acme:form-return code="authenticated.message.form.button.return" />
 
 </acme:form>

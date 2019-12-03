@@ -35,7 +35,11 @@ public class AuthenticatedMessageListByThreadService implements AbstractListServ
 
 		messageThread = this.repository.findOneThreadById(threadId);
 
-		result = messageThread.getUsers().stream().anyMatch(u -> u.getId() == principal.getActiveRoleId());
+		for (Authenticated a : messageThread.getUsers()) {
+			if (a.getId() == principal.getActiveRoleId()) {
+				result = true;
+			}
+		}
 
 		return result;
 
@@ -47,7 +51,7 @@ public class AuthenticatedMessageListByThreadService implements AbstractListServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment");
+		request.unbind(entity, model, "title", "moment", "tags");
 
 	}
 

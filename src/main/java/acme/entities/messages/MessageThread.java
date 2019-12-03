@@ -1,10 +1,13 @@
 
 package acme.entities.messages;
 
+import java.beans.Transient;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,22 +30,38 @@ public class MessageThread extends DomainEntity {
 
 	//Serialization identifier -----------------------------------------------------------
 
-	private static final long			serialVersionUID	= 1L;
+	private static final long					serialVersionUID	= 1L;
 
 	//Attributes
 
 	@NotBlank
 	@Length(max = 255)
-	private String						title;
+	private String								title;
 
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date						moment;
+	private Date								moment;
 
 	@NotNull
-	@Valid
-	@ManyToMany
-	private Collection<Authenticated>	users;
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Collection<@Valid Authenticated>	users;
+
+
+	@Transient
+	public String userList() {
+		String users = "";
+
+		int count = 0;
+
+		for (Authenticated a : this.users) {
+			count++;
+			users += a.getUserAccount().getUsername();
+			if (count < this.users.size()) {
+				users += ", ";
+			}
+		}
+		return users;
+	}
 
 }

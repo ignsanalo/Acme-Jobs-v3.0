@@ -282,7 +282,7 @@
 	</bean>
 
 
-	<!-- Authenticated -->
+	<!-- Authenticated  1-->
 	
 	
 <bean name="AlvaroAuthenticated" class="acme.framework.entities.Authenticated">
@@ -305,6 +305,7 @@
 			<list>
 				<ref bean="AlvaroEmployer" />
 				<ref bean="AlvaroAuthenticated" />
+
 			</list>
 		</property>
 	</bean>
@@ -315,6 +316,9 @@
 		<property name="userAccount" ref="AlvaroUserAccount" />
 	</bean>
 	
+	<!-- Authenticated 2 -->
+	
+	
 
 	<!-- MessageThreads -->
 
@@ -324,6 +328,7 @@
 		<property name="users">
 			<list>
 				<ref bean="AlvaroAuthenticated" />
+				<ref bean="employer1Authenticated"/>
 			</list>
 		</property>
 	</bean>

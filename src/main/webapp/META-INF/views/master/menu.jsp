@@ -79,9 +79,9 @@
 			<acme:menu-suboption code="master.menu.user-account.offer.list" action="/authenticated/offer/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.requests.list" action="/authenticated/requests/list" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.message-thread.list" action="/authenticated/message-thread/list-mine" />
-			<acme:menu-suboption code="master.menu.user-account.message.list" action="/authenticated/message/list-by-thread" />
-		</acme:menu-option>
+ 		</acme:menu-option>
 
 
 	</acme:menu-left>

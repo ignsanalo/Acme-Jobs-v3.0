@@ -18,11 +18,12 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.messageThread.form.label.title" path="title" />
 	<acme:form-moment code="authenticated.messageThread.form.label.moment" path="moment" />
-	<acme:form-textbox code="authenticated.messageThread.form.label.users" path="users" />
-
+	<acme:form-textbox code="authenticated.messageThread.form.label.users" path="userList"/>
 	<acme:form-submit code="authenticated.messageThread.form.label.show-messages" method="get"
-		action="authenticated/message/list-message-by-id ?id=${id}" />
+		action="/authenticated/message/list-by-thread?id=${id}" />
 
 	<acme:form-return code="authenticated.messageThread.form.button.return" />
 
 </acme:form>
+
+
