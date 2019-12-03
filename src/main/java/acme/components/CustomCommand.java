@@ -1,3 +1,4 @@
+
 /*
  * CustomCommand.java
  *
@@ -15,5 +16,6 @@ package acme.components;
 import acme.framework.components.Command;
 
 public enum CustomCommand implements Command {
-	LIST_MINE, LIST_BY_THREAD, LIST_BY_JOB
+	LIST_MINE, LIST_BY_THREAD, LIST_BY_JOB, LIST_JOBS_APP
 }
+

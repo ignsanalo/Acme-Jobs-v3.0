@@ -1,4 +1,3 @@
-
 package acme.entities.applications;
 
 import java.util.Date;
@@ -73,3 +72,4 @@ public class Application extends DomainEntity {
 
 
 }
+

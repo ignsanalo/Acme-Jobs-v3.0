@@ -247,6 +247,35 @@
 		<property name="userAccount" ref="employer1UserAccount" />
 	</bean>
 	
+	<bean name="employer2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="employer2" />
+		<property name="password" value="employer2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Employer" />
+				<property name="surname" value="Two" />
+				<property name="email" value="employer2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="employer2Employer" />
+				<ref bean="employer2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="employer2Employer" class="acme.entities.roles.Employer">
+		<property name="company" value="Employer 2, Inc." />
+		<property name="sector" value="Sector 2" />
+		<property name="userAccount" ref="employer2UserAccount" />
+	</bean>
+
+	<bean name="employer2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="employer2UserAccount" />
+	</bean>
+	
 	<!-- Workers -->
 	
 	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
@@ -290,8 +319,9 @@
 		<property name="description" value="Lorem ipsum sit dolor amet." />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
-		<property name="employer" ref="employer1Employer" />
-		
+
+		<property name="employer" ref="employer2Employer" />
+
 	</bean>
 
 	<bean name="job2" class="acme.entities.jobs.Job">
@@ -302,7 +332,7 @@
 		<property name="description" value="Lorem ipsum sit dolor amet." />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
-		<property name="employer" ref="employer1Employer" />
+		<property name="employer" ref="employer2Employer" />
 	</bean>
 
 	<bean name="job3" class="acme.entities.jobs.Job">
@@ -313,7 +343,7 @@
 		<property name="description" value="Lorem ipsum sit dolor amet." />
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
-		<property name="employer" ref="employer1Employer" />
+		<property name="employer" ref="employer2Employer" />
 	</bean>
 	
 	
@@ -418,6 +448,8 @@
 		<property name="qualifications" value="Good application" />
 		<property name="worker" ref="worker1Worker" />
 		<property name="job" ref="job1" />
+		
+		
 	</bean>
 	
 	<bean name="application2" class="acme.entities.applications.Application">
