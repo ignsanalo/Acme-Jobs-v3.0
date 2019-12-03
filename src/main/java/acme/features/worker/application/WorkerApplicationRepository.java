@@ -19,3 +19,5 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 	Collection<Application> findManyByWorkerId(int workerId);
 
 }
+
+//ags

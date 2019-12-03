@@ -84,7 +84,7 @@ master.menu.user-account.become-consumer = Hazte consumidor
 # master.menu.worker ####################################################
 
 master.menu.worker = Trabajador
-master.menu.worker.application.list = Listar solicitudes
+master.menu.worker.application.list = Listar aplicaciones
 
 ﻿# master.footer ###############################################################
 
