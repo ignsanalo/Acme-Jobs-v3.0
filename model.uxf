@@ -18,13 +18,13 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>954</x>
-      <y>198</y>
-      <w>126</w>
-      <h>63</h>
+      <x>963</x>
+      <y>117</y>
+      <w>117</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -179,16 +179,16 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>828</x>
-      <y>207</y>
+      <x>837</x>
+      <y>126</y>
       <w>180</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
-Provider
+Auditor
 --
-+ company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
++ firm: String {NotBlank}
++ ResponsabilityStatement: String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -310,26 +310,6 @@ has v</panel_attributes>
 + moment: Date {Temporal{TIMESTAMP}, PAST}
 + moreInfo: String {URL}
 + text: String {NotBlank}
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>414</x>
-      <y>711</y>
-      <w>432</w>
-      <h>117</h>
-    </coordinates>
-    <panel_attributes>Requests
---
-+ title: String {NotBlank}
-+ moment: Date { Temporal{TIMESTAMP}, PAST}
-+ deadline: Date {Temporal{TIMESTAMP}, NotNull}
-+ text: String {NotBlank}
-+ reward: Money {NotNull, Valid}
-+ ticker: String {NotBlank, Unique, Pattern{^[R]{1}[A-Z]{4}\\-[0-9]{5}$, Valid}
-
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -518,5 +498,40 @@ lt=x-&gt;
 
 0..*</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>846</x>
+      <y>225</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Provider
+--
++ company: String {NotBlank}
++ sector: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>729</y>
+      <w>432</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>Requests
+--
++ title: String {NotBlank}
++ moment: Date { Temporal{TIMESTAMP}, PAST}
++ deadline: Date {Temporal{TIMESTAMP}, NotNull}
++ text: String {NotBlank}
++ reward: Money {NotNull, Valid}
++ ticker: String {NotBlank, Unique, Pattern{^[R]{1}[A-Z]{4}\\-[0-9]{5}$, Valid}
+
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
