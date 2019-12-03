@@ -27,15 +27,9 @@ public class Application extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long serialVersionUID = 1L;
-
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	public enum ApplicationStatus {
-		PENDING, ACCEPTED, REJECTED
-	};
-
 
 	@Column(unique = true)
 	@NotBlank
@@ -46,8 +40,6 @@ public class Application extends DomainEntity {
 	@Past
 	private Date				moment;
 
-	private ApplicationStatus	status;
-
 	@NotBlank
 	private String				statement;
 
@@ -56,6 +48,8 @@ public class Application extends DomainEntity {
 
 	@NotBlank
 	private String				qualifications;
+
+	private String				status;
 
 	// Relationships ----------------------------------------------------------------------
 

@@ -18,5 +18,8 @@ worker.application.form.label.qualifications = Calificaciones:
 worker.application.list.label.reference = Referencia
 worker.application.list.label.moment = Momento
 worker.application.list.label.status = Estado
+worker.application.form.label.status.pending = Pendiente
+worker.application.form.label.status.accepted = Aceptada
+worker.application.form.label.status.rejected = Denegada
 
 worker.application.form.button.return = Return
