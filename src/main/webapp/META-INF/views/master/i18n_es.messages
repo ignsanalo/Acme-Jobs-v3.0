@@ -76,7 +76,7 @@ master.menu.consumer.offers.create = Crear Ofertas
 
 master.menu.auditor = Auditor
 master.menu.auditor.job.list= Listar trabajos con audit
-master.menu.auditor.job.list2= Listar trabajos con audit
+master.menu.auditor.job.list2= Listar trabajos sin audit
 
 # master.menu.user-account ####################################################
 

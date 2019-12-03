@@ -5,6 +5,8 @@
 
 <acme:list>
 	<acme:list-column code="auditor.job.list.label.reference" path="reference" width="40%"/>
-	<acme:list-column code="auditor.job.list.label.title" path="title" width="60%"/>
-	<acme:list-column code="auditor.job.list.label.deadline" path="deadline" width="60%"/>
+	<acme:list-column code="auditor.job.list.label.title" path="title" width="40%"/>
+	<acme:list-column code="auditor.job.list.label.deadline" path="deadline" width="40%"/>
+	
+	
 </acme:list>

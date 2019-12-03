@@ -5,6 +5,8 @@ auditor.job.list.label.Salary = Salary
 auditor.job.list.label.description= Description
 auditor.job.list.label.moreInfo= More Information
 
+auditor.job.form.label.auditRecord= Audit Record
+
 auditor.job.form.label.reference=Reference
 auditor.job.form.label.title=Title
 auditor.job.form.label.deadline=Deadline

@@ -12,4 +12,6 @@ auditor.job.form.label.salary=Salario
 auditor.job.form.label.moreInfo=Mas Info
 auditor.job.form.label.description= Descripción
 
+auditor.job.form.label.auditRecord= Audit Records
+
 auditor.job.form.button.return= Volver

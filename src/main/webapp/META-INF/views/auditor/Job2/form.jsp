@@ -10,6 +10,8 @@
 	<acme:form-money code="auditor.job.form.label.salary" path="salary"/>
 	<acme:form-url code="auditor.job.form.label.description" path="description"/>
 	<acme:form-textbox code="auditor.job.form.label.moreInfo" path="moreInfo"/>
+	
+	<acme:form-submit code="auditor.job.form.label.auditRecord" method="get" action="/auditor/auditrecord/list-by-job?id=${id}"/>
 
 	
 	<acme:form-return code="auditor.job.form.button.return"/>
