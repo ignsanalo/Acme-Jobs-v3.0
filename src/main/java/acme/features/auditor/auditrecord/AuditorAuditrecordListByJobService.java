@@ -46,6 +46,7 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 		JobID = request.getModel().getInteger("id");
 
 		result = this.repository.findManyByJobId(JobID);
+		result.removeAll(this.repository.findManyAuditByActive(false));
 
 		return result;
 

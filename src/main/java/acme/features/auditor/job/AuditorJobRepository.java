@@ -21,4 +21,7 @@ public interface AuditorJobRepository extends AbstractRepository {
 	@Query("select e from Job e where not e.id in (select j from Auditrecord a join a.job j where a.job.id = j.id and a.auditor.id= ?1)")
 	Collection<Job> findNotManyByAuditorId(int auditorId);
 
+	@Query("select j from Job j where j.finalMode <= ?1")   //pilla los que no esten en final mode
+	Collection<Job> findManyJobByActive(Boolean res);
+
 }
