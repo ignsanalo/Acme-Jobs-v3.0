@@ -1,3 +1,4 @@
+
 create table `administrator` (
        `id` integer not null,
         `version` integer not null,
@@ -603,3 +604,4 @@ create table `administrator` (
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
