@@ -29,6 +29,7 @@ master.menu.user-account.companyrecord.list = Listar registro de compañias
 master.menu.user-account.investorrecords.list = Listar registros de inversores
 master.menu.user-account.offer.list = Listar ofertas
 master.menu.user-account.challenge.list = Listar desafíos
+master.menu.user-account.message-thread.list = Hilo de mensajes
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
