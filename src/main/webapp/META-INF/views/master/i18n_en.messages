@@ -80,6 +80,11 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+# master.menu.worker ####################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list = List applications
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us
