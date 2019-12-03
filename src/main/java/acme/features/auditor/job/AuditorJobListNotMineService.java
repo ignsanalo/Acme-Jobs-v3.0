@@ -1,5 +1,5 @@
 
-package acme.features.auditor.job2;
+package acme.features.auditor.job;
 
 import java.util.Collection;
 
@@ -14,10 +14,10 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorJob2ListMineService implements AbstractListService<Auditor, Job> {
+public class AuditorJobListNotMineService implements AbstractListService<Auditor, Job> {
 
 	@Autowired
-	AuditorJob2Repository repository;
+	AuditorJobRepository repository;
 
 
 	@Override
@@ -46,7 +46,8 @@ public class AuditorJob2ListMineService implements AbstractListService<Auditor, 
 
 		principal = request.getPrincipal();
 
-		result = this.repository.findManyByAuditorId(principal.getActiveRoleId());
+		result = this.repository.findNotManyByAuditorId(principal.getActiveRoleId());
+		//result.removeAll(this.repository.findManyJobByActive(false));
 
 		return result;
 
