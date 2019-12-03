@@ -1,4 +1,3 @@
-
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -38,6 +37,10 @@
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+       
+    alter table `duty` 
+       drop 
+       foreign key `FKs2uoxh4i5ya8ptyefae60iao1`;
 
     alter table `employer` 
        drop 
@@ -90,6 +93,8 @@
     drop table if exists `configuration`;
 
     drop table if exists `consumer`;
+    
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 

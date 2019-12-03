@@ -1,4 +1,3 @@
-
 /*
  * CustomCommand.java
  *
@@ -18,4 +17,3 @@ import acme.framework.components.Command;
 public enum CustomCommand implements Command {
 	LIST_MINE, LIST_BY_THREAD, LIST_BY_JOB, LIST_JOBS_APP
 }
-

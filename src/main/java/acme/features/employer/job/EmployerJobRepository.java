@@ -1,4 +1,3 @@
-
 package acme.features.employer.job;
 
 import java.util.Collection;
@@ -14,7 +13,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Job j where j.id = ?1")
 	Job findOneJobById(int id);
-
+  
 	@Query("select j from Job j where j.employer.id >= ?1")
 	Collection<Job> findManyByEmployerId(int employerId);
 
