@@ -51,10 +51,10 @@ public class AuditorAuditrecordShowService implements AbstractShowService<Audito
 		assert request != null;
 
 		Auditrecord result;
-		int id;
+		int auditid;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneAuditById(id);
+		auditid = request.getModel().getInteger("id");
+		result = this.repository.findOneAuditById(auditid);
 
 		return result;
 

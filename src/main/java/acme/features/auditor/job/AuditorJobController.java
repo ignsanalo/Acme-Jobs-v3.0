@@ -18,10 +18,13 @@ import acme.framework.controllers.AbstractController;
 public class AuditorJobController extends AbstractController<Auditor, Job> {
 
 	@Autowired
-	private AuditorJobShowService		showService;
+	private AuditorJobShowService			showService;
 
 	@Autowired
-	private AuditorJobListMineService	listMineService;
+	private AuditorJobListMineService		listMineService;
+
+	@Autowired
+	private AuditorJobListNotMineService	listNotMineService;
 
 
 	@PostConstruct
@@ -29,6 +32,8 @@ public class AuditorJobController extends AbstractController<Auditor, Job> {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
+
+		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listNotMineService);
 
 	}
 
