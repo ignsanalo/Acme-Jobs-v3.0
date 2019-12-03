@@ -29,6 +29,7 @@ master.menu.user-account.companyrecord.list = Listar registro de compañias
 master.menu.user-account.investorrecords.list = Listar registros de inversores
 master.menu.user-account.offer.list = Listar ofertas
 master.menu.user-account.challenge.list = Listar desafíos
+master.menu.user-account.message-thread.list = Hilo de mensajes
 master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
@@ -72,6 +73,12 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.consumer.offers.list = Listar Ofertas
 master.menu.consumer.offers.create = Crear Ofertas
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.list= Listar trabajos con audit
+master.menu.auditor.job.list2= Listar trabajos sin audit
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -81,8 +88,14 @@ master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 
+# master.menu.worker ####################################################
 
-# master.footer ###############################################################
+master.menu.worker = Trabajador
+master.menu.worker.application.list = Listar aplicaciones
+
+﻿# master.footer ###############################################################
+
+
 
 master.footer.title.about = Nosotros
 master.footer.label.company = La empresa

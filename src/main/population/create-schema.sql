@@ -1,5 +1,4 @@
-
-    create table `administrator` (
+ create table `administrator` (
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
@@ -22,6 +21,27 @@
         `user_account_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
+    
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `responsability_statement` varchar(255),
+        `firm` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditrecord` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `final_mode` bit not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        `auditor_id` integer not null,
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
 
     create table `application` (
        `id` integer not null,
@@ -32,6 +52,7 @@
         `skills` varchar(255),
         `statement` varchar(255),
         `status` integer,
+        `employer_id` integer not null,
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
@@ -128,6 +149,32 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `message_thread_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread_authenticated` (
+       `message_thread_id` integer not null,
+        `users_id` integer not null
+    ) engine=InnoDB;
+
+
     create table `offer` (
        `id` integer not null,
         `version` integer not null,
@@ -192,8 +239,10 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
+
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -213,6 +262,27 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+       
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `auditrecord` 
+       add constraint `FKditgyx355sc4ye86w7tj22cq6` 
+       foreign key (`auditor_id`) 
+       references `auditor` (`id`);
+
+    alter table `auditrecord` 
+       add constraint `FKa5p4w0gnuwmtb07juvrg8ptn6` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+
+    alter table `application` 
+       add constraint `FKg5r46yek4bs3p6spef3r0n3se` 
+       foreign key (`employer_id`) 
+       references `employer` (`id`);
 
     alter table `application` 
        add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
@@ -244,6 +314,21 @@
        foreign key (`employer_id`) 
        references `employer` (`id`);
 
+    alter table `message` 
+       add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `message_thread_authenticated` 
+       add constraint `FKsnymblhgu3dixq3t2qhptr4x2` 
+       foreign key (`users_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message_thread_authenticated` 
+       add constraint `FKjb0tx79q4dpibs3mnkp6wfqvf` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
@@ -253,3 +338,5 @@
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+

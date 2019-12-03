@@ -1,4 +1,3 @@
-
 package acme.entities.applications;
 
 import java.util.Date;
@@ -28,10 +27,10 @@ public class Application extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long serialVersionUID = 1L;
-
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
 
 	public enum ApplicationStatus {
 		PENDING, ACCEPTED, REJECTED
@@ -43,12 +42,9 @@ public class Application extends DomainEntity {
 	@Length(min = 5, max = 15)
 	private String				reference;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
-
-	private ApplicationStatus	status;
 
 	@NotBlank
 	private String				statement;
@@ -59,6 +55,8 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				qualifications;
 
+	private String				status;
+
 	// Relationships ----------------------------------------------------------------------
 
 	@NotNull
@@ -66,9 +64,12 @@ public class Application extends DomainEntity {
 	@ManyToOne(optional = false)
 	private Worker				worker;
 
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Job					job;
 
+
 }
+

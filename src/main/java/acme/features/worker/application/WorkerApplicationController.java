@@ -30,4 +30,6 @@ public class WorkerApplicationController extends AbstractController<Worker, Appl
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 	}
 
+	//ags
+
 }
