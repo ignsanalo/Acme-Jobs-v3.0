@@ -47,7 +47,7 @@ public class AuditorJobListNotMineService implements AbstractListService<Auditor
 		principal = request.getPrincipal();
 
 		result = this.repository.findNotManyByAuditorId(principal.getActiveRoleId());
-		//result.removeAll(this.repository.findManyJobByActive(false));
+		result.removeAll(this.repository.findManyJobByActive(false));
 
 		return result;
 

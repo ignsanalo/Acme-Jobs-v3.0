@@ -47,6 +47,7 @@ public class AuditorJobListMineService implements AbstractListService<Auditor, J
 		principal = request.getPrincipal();
 
 		result = this.repository.findManyByAuditorId(principal.getActiveRoleId());
+		result.removeAll(this.repository.findManyJobByActive(false));
 
 		return result;
 
