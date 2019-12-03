@@ -291,6 +291,7 @@
 		<property name="moreInfo" value="http://www.example.com" />
 		<property name="finalMode" value="true" />
 		<property name="employer" ref="employer1Employer" />
+		
 	</bean>
 
 	<bean name="job2" class="acme.entities.jobs.Job">
@@ -316,7 +317,87 @@
 	</bean>
 	
 	
-	<!-- Applications -->
+	<!-- Auditors -->
+	
+	<bean name="auditor1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="audit1" />
+		<property name="password" value="audit1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Audit" />
+				<property name="surname" value="One" />
+				<property name="email" value="audit1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="auditor1Auditor" />
+				<ref bean="auditor1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
+		<property name="firm" value="Auditor 1, Inc." />
+		<property name="ResponsabilityStatement" value="Sector 1" />
+		<property name="userAccount" ref="auditor1UserAccount" />
+	</bean>
+
+	<bean name="auditor1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="auditor1UserAccount" />
+	</bean>
+	<bean name="auditor2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="audit2" />
+		<property name="password" value="audit2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Audit" />
+				<property name="surname" value="One2" />
+				<property name="email" value="audit12@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="auditor2Auditor" />
+				<ref bean="auditor2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
+		<property name="firm" value="Auditor 21, Inc." />
+		<property name="ResponsabilityStatement" value="Sector 1" />
+		<property name="userAccount" ref="auditor2UserAccount" />
+	</bean>
+
+	<bean name="auditor2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="auditor2UserAccount" />
+	</bean>
+	
+	<!-- AuditorRecords -->
+	
+	<bean name="auditrecord1" class="acme.entities.auditrecords.Auditrecord">
+		<property name="title" value="auditR1" />
+		<property name="moment" value="2001/12/11 23:59" />
+		<property name="body" value="blablabla1" />
+		<property name="finalMode" value="true" />
+		<property name="auditor" ref="auditor1Auditor" />
+		<property name="job" ref="job1" />
+		
+	</bean>
+	<bean name="auditrecord2" class="acme.entities.auditrecords.Auditrecord">
+		<property name="title" value="auditR2" />
+		<property name="moment" value="2001/12/11 23:59" />
+		<property name="body" value="blablabla2" />
+		<property name="finalMode" value="true" />
+		<property name="auditor" ref="auditor2Auditor" />
+		<property name="job" ref="job2" />
+	</bean>
+	
+	
+	
 	
 	<bean name="application1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APP1:WOR1" />

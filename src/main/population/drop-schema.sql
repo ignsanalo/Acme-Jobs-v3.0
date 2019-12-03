@@ -1,4 +1,3 @@
-
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -6,6 +5,18 @@
     alter table `anonymous` 
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
+       
+     alter table `auditor` 
+       drop 
+       foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
+
+    alter table `auditrecord` 
+       drop 
+       foreign key `FKditgyx355sc4ye86w7tj22cq6`;
+
+    alter table `auditrecord` 
+       drop 
+       foreign key `FKa5p4w0gnuwmtb07juvrg8ptn6`;
 
     alter table `application` 
        drop 
@@ -62,6 +73,10 @@
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+    
+    drop table if exists `auditor`;
+
+    drop table if exists `auditrecord`;
 
     drop table if exists `application`;
 
