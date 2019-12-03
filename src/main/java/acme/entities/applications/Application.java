@@ -43,6 +43,7 @@ public class Application extends DomainEntity {
 	@Length(min = 5, max = 15)
 	private String				reference;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
