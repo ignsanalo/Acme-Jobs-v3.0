@@ -11,12 +11,12 @@
 
 <tiles-definitions>
 
-	<definition name="employer/job/form" extends="master">
-		<put-attribute name="body" type="template" value="../employer/job/form.jsp" />
+	<definition name="authenticated/duty/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/duty/form.jsp" />
 	</definition>
 
-	<definition name="employer/job/list" extends="master">
-		<put-attribute name="body" type="template" value="../employer/job/list.jsp" />
+	<definition name="authenticated/duty/list" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/duty/list.jsp" />
 	</definition>
 
 </tiles-definitions>

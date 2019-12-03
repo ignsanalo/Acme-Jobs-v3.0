@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.descriptor.Descriptor;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -56,10 +55,6 @@ public class Job extends DomainEntity {
 	private String				moreInfo;
 
 	private boolean				finalMode;
-
-	@NotNull
-	@Valid
-	private Descriptor			descriptor;
 
 	// Relationships ----------------------------------------------------------------------
 

@@ -1,13 +1,12 @@
 
-package acme.entities.descriptor;
+package acme.entities.duties;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import acme.entities.duty.Duty;
 import acme.entities.jobs.Job;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -16,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Descriptor extends DomainEntity {
+public class Duty extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -25,17 +24,18 @@ public class Descriptor extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
+	private String				title;
+
+	@NotBlank
 	private String				description;
 
-	@NotNull
-	@Valid
-	private Duty				duty;
+	private Double				percentage;
 
 	// Relationships ----------------------------------------------------------------------
 
 	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	private Job					job;
 
 }

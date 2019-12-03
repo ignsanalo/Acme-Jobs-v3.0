@@ -214,8 +214,8 @@
 		<property name="stars" value="1" />
 
 	</bean>
-	
-	
+
+
 	<!-- Employers -->
 
 	<bean name="employer1UserAccount" class="acme.framework.entities.UserAccount">
@@ -281,10 +281,33 @@
 		<property name="finalMode" value="true" />
 		<property name="employer" ref="employer1Employer" />
 	</bean>
-	
-	
+
+	<!-- Duty -->
+
+	<bean name="duty1" class="acme.entities.duties.Duty">
+		<property name="title" value="Title 1" />
+		<property name="description" value="Duty tutifruti1" />
+		<property name="percentage" value="10.0" />
+		<property name="job" ref="job1" />
+	</bean>
+
+	<bean name="duty2" class="acme.entities.duties.Duty">
+		<property name="title" value="Title 2" />
+		<property name="description" value="Duty tutifruti2" />
+		<property name="percentage" value="20.0" />
+		<property name="job" ref="job2" />
+	</bean>
+
+	<bean name="duty3" class="acme.entities.duties.Duty">
+		<property name="title" value="Title 3" />
+		<property name="description" value="Duty tutifruti3" />
+		<property name="percentage" value="30.0" />
+		<property name="job" ref="job3" />
+	</bean>
+
+
 	<!-- Applications -->
-	
-	
+
+
 
 </beans>
