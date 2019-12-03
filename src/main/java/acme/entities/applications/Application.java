@@ -1,10 +1,13 @@
+
 package acme.entities.applications;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -23,53 +26,54 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "reference")
+})
 public class Application extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
 	// Attributes -------------------------------------------------------------
 
 
 	public enum ApplicationStatus {
-		PENDING, ACCEPTED, REJECTED
+		PEDING, ACCEPTED, REJECTED
 	}
 
 
 	@Column(unique = true)
 	@NotBlank
 	@Length(min = 5, max = 15)
-	private String				reference;
+	private String	reference;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date				moment;
+	private Date	moment;
 
 	@NotBlank
-	private String				statement;
+	private String	statement;
 
 	@NotBlank
-	private String				skills;
+	private String	skills;
 
 	@NotBlank
-	private String				qualifications;
+	private String	qualifications;
 
-	private String				status;
+	@NotBlank
+	private String	status;
 
 	// Relationships ----------------------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Worker				worker;
-
+	private Worker	worker;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Job					job;
-
+	private Job		job;
 
 }
-

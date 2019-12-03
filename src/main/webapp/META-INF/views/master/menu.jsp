@@ -89,7 +89,6 @@
 			<acme:menu-suboption code="master.menu.user-account.message-thread.list" action="/authenticated/message-thread/list-mine" />
  		</acme:menu-option>
 
-		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 		<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list-mine" />
