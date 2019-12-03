@@ -15,6 +15,7 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -30,6 +31,12 @@ public class Application extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
+
+	public enum ApplicationStatus {
+		PENDING, ACCEPTED, REJECTED
+	}
+
 
 	@Column(unique = true)
 	@NotBlank
@@ -57,5 +64,12 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Worker				worker;
-	//abha
+
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Job					job;
+
+
 }
