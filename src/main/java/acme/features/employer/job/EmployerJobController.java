@@ -1,4 +1,3 @@
-
 package acme.features.employer.job;
 
 import javax.annotation.PostConstruct;
@@ -25,8 +24,8 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 	@Autowired
 	private EmployerJobListMineService	listMineService;
 
-
 	// Constructors -----------------------------------------------------------
+
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
