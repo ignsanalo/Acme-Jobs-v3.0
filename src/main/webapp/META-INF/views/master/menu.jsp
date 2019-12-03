@@ -84,6 +84,8 @@
 			<acme:menu-suboption code="master.menu.user-account.offer.list" action="/authenticated/offer/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.requests.list" action="/authenticated/requests/list" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.user-account.job.list" action="/authenticated/job/list-mine" />
 
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.message-thread.list" action="/authenticated/message-thread/list-mine" />

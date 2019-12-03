@@ -1,4 +1,3 @@
-
 package acme.features.employer.job;
 
 import javax.annotation.PostConstruct;
@@ -15,8 +14,9 @@ import acme.framework.controllers.AbstractController;
 
 @Controller
 @RequestMapping("/employer/job/")
-
 public class EmployerJobController extends AbstractController<Employer, Job> {
+
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private EmployerJobShowService		showService;
@@ -24,12 +24,12 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 	@Autowired
 	private EmployerJobListMineService	listMineService;
 
+	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-
 	}
 
 }
