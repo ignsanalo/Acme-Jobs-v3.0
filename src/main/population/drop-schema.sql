@@ -7,6 +7,18 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `application` 
+       drop 
+       foreign key `FKg5r46yek4bs3p6spef3r0n3se`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKmbjdoxi3o93agxosoate4sxbt`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -23,6 +35,7 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
@@ -34,6 +47,7 @@
     alter table `message_thread_authenticated` 
        drop 
        foreign key `FKjb0tx79q4dpibs3mnkp6wfqvf`;
+
 
     alter table `provider` 
        drop 
@@ -48,6 +62,8 @@
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `application`;
 
     drop table if exists `authenticated`;
 
@@ -65,11 +81,13 @@
 
     drop table if exists `job`;
 
+
     drop table if exists `message`;
 
     drop table if exists `message_thread`;
 
     drop table if exists `message_thread_authenticated`;
+
 
     drop table if exists `offer`;
 

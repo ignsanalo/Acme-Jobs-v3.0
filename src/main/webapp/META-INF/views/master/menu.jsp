@@ -79,9 +79,22 @@
 			<acme:menu-suboption code="master.menu.user-account.offer.list" action="/authenticated/offer/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.requests.list" action="/authenticated/requests/list" />
+
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.user-account.message-thread.list" action="/authenticated/message-thread/list-mine" />
  		</acme:menu-option>
+
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+		<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list" />
+			<acme:menu-separator />
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+		<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine" />
+		</acme:menu-option>
+
 
 
 	</acme:menu-left>
