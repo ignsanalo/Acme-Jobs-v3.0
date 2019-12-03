@@ -1061,19 +1061,4 @@ bg=blue</panel_attributes>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;30.0</additional_attributes>
   </element>
-      <x>1377</x>
-      <y>504</y>
-      <w>306</w>
-      <h>135</h>
-    </coordinates>
-    <panel_attributes>Application
---
-+ reference: String {Unique,NotBlank,Lenght(min=5,max=15)}
-+ moment: Date {Temporal{TIMESTAMP}, PAST}
-+ status: Enum {PENDING, ACCEPTED, REJECTED}
-+ statement: String {NotBlank}
-+ skills: String {NotBlank}
-+ qualifications: String {NotBlank}</panel_attributes>
-    <additional_attributes/>
-  </element>
 </diagram>

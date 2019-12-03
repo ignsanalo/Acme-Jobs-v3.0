@@ -27,6 +27,9 @@
 	<acme:form-submit  code="employer.application.button.list" method="get" 
 		action="/employer/application/list-jobs-app?id=${id}"/>
 		
+	<acme:form-submit code="employer.job.form.button.duty-list" method="get" 
+		action="/employer/duty/list-by-job?id=${id}"/>
+		
 	<acme:form-return code="employer.job.form.button.return" />
 	
 </acme:form>

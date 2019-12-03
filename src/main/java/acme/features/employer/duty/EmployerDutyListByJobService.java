@@ -16,7 +16,7 @@ import acme.framework.services.AbstractListService;
 public class EmployerDutyListByJobService implements AbstractListService<Employer, Duty> {
 
 	@Autowired
-	EmployerDutyRepository dutyRepository;
+	EmployerDutyRepository repository;
 
 
 	@Override
@@ -41,10 +41,10 @@ public class EmployerDutyListByJobService implements AbstractListService<Employe
 		assert request != null;
 
 		Collection<Duty> result;
-		Integer id;
+		Integer idJob;
 
-		id = request.getModel().getInteger("id");
-		result = this.dutyRepository.findManyByJob(id);
+		idJob = request.getModel().getInteger("id");
+		result = this.repository.findManyByJob(idJob);
 
 		return result;
 
