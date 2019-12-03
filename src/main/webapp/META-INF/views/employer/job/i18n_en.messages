@@ -19,6 +19,6 @@ employer.job.form.label.salary = Salary:
 employer.job.form.label.moreInfo = More info:
 employer.job.form.label.description = Description:
 
-employer.job.application.button.list = List applications
+employer.application.button.list = List applications
 
 employer.job.form.button.return = Return
