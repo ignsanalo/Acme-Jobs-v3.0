@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
-import acme.features.authenticated.duty.AuthenticatedDutyRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -15,7 +14,7 @@ import acme.framework.services.AbstractShowService;
 public class EmployerDutyShowService implements AbstractShowService<Employer, Duty> {
 
 	@Autowired
-	private AuthenticatedDutyRepository dutyRepository;
+	private EmployerDutyRepository repository;
 
 
 	@Override
@@ -38,10 +37,10 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		assert request != null;
 
 		Duty result;
-		int id;
+		int idJob;
 
-		id = request.getModel().getInteger("id");
-		result = this.dutyRepository.findOneById(id);
+		idJob = request.getModel().getInteger("id");
+		result = this.repository.findOneById(idJob);
 
 		return result;
 	}

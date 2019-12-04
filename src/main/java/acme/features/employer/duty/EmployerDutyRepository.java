@@ -24,9 +24,9 @@ import acme.framework.repositories.AbstractRepository;
 public interface EmployerDutyRepository extends AbstractRepository {
 
 	@Query("select d from Duty d where d.id = ?1")
-	Duty findOneById(int id);
+	Duty findOneById(int idJob);
 
 	@Query("select d from Duty d where d.job.id = ?1")
-	Collection<Duty> findManyByJob(int id);
+	Collection<Duty> findManyByJob(int idJob);
 
 }

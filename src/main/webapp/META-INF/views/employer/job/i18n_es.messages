@@ -20,5 +20,6 @@ employer.job.form.label.moreInfo = Más info:
 employer.job.form.label.description = Descripción:
 
 employer.application.button.list = Listar aplicaciones
+employer.job.form.button.duty-list = Listar tareas
 
 employer.job.form.button.return = Volver

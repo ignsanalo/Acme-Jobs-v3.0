@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.duty.form.label.title" path="title" />
-	<acme:form-textbox code="authenticated.duty.form.label.description" path="description" />
-	<acme:form-double code="authenticated.duty.form.label.percentage" path="percentage" />
+	<acme:form-textbox code="employer.duty.form.label.title" path="title" />
+	<acme:form-textbox code="employer.duty.form.label.description" path="description" />
+	<acme:form-double code="employer.duty.form.label.percentage" path="percentage" />
 
-	<acme:form-return code="authenticated.duty.form.button.return" />
+	<acme:form-return code="employer.duty.form.button.return" />
 
 </acme:form>
