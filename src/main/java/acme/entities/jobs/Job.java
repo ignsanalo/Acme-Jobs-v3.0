@@ -5,7 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -24,6 +26,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "reference")
+})
 public class Job extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -40,8 +45,8 @@ public class Job extends DomainEntity {
 	@NotBlank
 	private String				title;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				deadline;
 
 	@NotNull

@@ -2,6 +2,8 @@
 package acme.entities.companyrecords;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -19,7 +21,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-
+@Table(indexes = {
+	@Index(columnList = "name")
+})
 public class Companyrecord extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
