@@ -17,7 +17,7 @@ import acme.framework.services.AbstractListService;
 public class EmployerApplicationListService implements AbstractListService<Employer, Application> {
 
 	@Autowired
-	private EmployerApplicationRepository repository;
+	EmployerApplicationRepository repository;
 
 
 	@Override
@@ -41,9 +41,8 @@ public class EmployerApplicationListService implements AbstractListService<Emplo
 		assert request != null;
 
 		Collection<Application> result;
-		Principal principal;
+		Principal principal = request.getPrincipal();
 
-		principal = request.getPrincipal();
 		result = this.repository.findManyByJobId(principal.getActiveRoleId());
 
 		return result;

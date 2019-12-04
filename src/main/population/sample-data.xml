@@ -354,7 +354,7 @@
 	</bean>
 	
 	<bean name="application3" class="acme.entities.applications.Application">
-		<property name="reference" value="EMP1-APP1:WOR3" />
+		<property name="reference" value="EMP1-APP3:WOR3" />
 		<property name="moment" value="2019/11/27 13:53" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a short statement" />

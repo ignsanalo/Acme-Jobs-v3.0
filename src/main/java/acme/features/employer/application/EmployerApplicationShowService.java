@@ -15,12 +15,14 @@ import acme.framework.services.AbstractShowService;
 public class EmployerApplicationShowService implements AbstractShowService<Employer, Application> {
 
 	@Autowired
-	private EmployerApplicationRepository repository;
+	EmployerApplicationRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Application> request) {
+		assert request != null;
 		boolean result;
+
 		int applicationId;
 		Application application;
 		Employer employer;
@@ -28,6 +30,7 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 
 		applicationId = request.getModel().getInteger("id");
 		application = this.repository.findOneApplicationById(applicationId);
+
 		employer = application.getJob().getEmployer();
 		principal = request.getPrincipal();
 		result = employer.getUserAccount().getId() == principal.getAccountId();
