@@ -11,11 +11,11 @@
 
 <tiles-definitions>
 
-	<definition name="auditor/job2/form" extends="master">
-		<put-attribute name="body" type="template" value="../auditor/job/form.jsp" />
+	<definition name="employer/auditrecord/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/auditrecord/form.jsp" />
 	</definition>
-	<definition name="auditor/job2/list" extends="master">
-		<put-attribute name="body" type="template" value="../auditor/job/list.jsp" />
+	<definition name="employer/auditrecord/list" extends="master">
+		<put-attribute name="body" type="template" value="../employer/auditrecord/list.jsp" />
 	</definition>
 
 </tiles-definitions>

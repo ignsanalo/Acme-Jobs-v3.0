@@ -29,7 +29,10 @@
 		
 	<acme:form-submit code="employer.job.form.button.duty-list" method="get" 
 		action="/employer/duty/list-by-job?id=${id}"/>
-		
+
+	<acme:form-submit code="auditor.job.form.label.auditRecord" method="get" 
+	action="/employer/auditrecord/list-by-job?id=${id}"/>
+	
 	<acme:form-return code="employer.job.form.button.return" />
 	
 </acme:form>

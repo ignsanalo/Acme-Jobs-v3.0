@@ -677,63 +677,6 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1773</x>
-      <y>468</y>
-      <w>225</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Sponsor
---
-+ organisationName: String {NotBlank}
-+ creditCard : CreditCard
-
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>765</x>
-      <y>396</y>
-      <w>1134</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0;1240.0;50.0;1240.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1773</x>
-      <y>639</y>
-      <w>225</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Banner
---
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1872</x>
-      <y>540</y>
-      <w>81</w>
-      <h>117</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=0..*
-Creates &gt;
-m2=1
-</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>252</x>
       <y>666</y>
       <w>288</w>
@@ -900,7 +843,7 @@ bg=yellow
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1476</x>
+      <x>1593</x>
       <y>99</y>
       <w>306</w>
       <h>81</h>
@@ -922,8 +865,8 @@ bg=yellow
     <id>Relation</id>
     <coordinates>
       <x>1386</x>
-      <y>126</y>
-      <w>108</w>
+      <y>117</y>
+      <w>225</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>m1=1
@@ -932,7 +875,7 @@ bg=yellow
 lt=x-&gt;
 
 m2=0..*</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -955,7 +898,7 @@ m2=0..*</panel_attributes>
     <coordinates>
       <x>765</x>
       <y>0</y>
-      <w>900</w>
+      <w>1017</w>
       <h>117</h>
     </coordinates>
     <panel_attributes>m1=0..*
@@ -964,14 +907,14 @@ m2=0..*</panel_attributes>
 lt=x-&gt;
 
 m2=1..*</panel_attributes>
-    <additional_attributes>960.0;110.0;960.0;20.0;10.0;20.0;10.0;90.0</additional_attributes>
+    <additional_attributes>1090.0;110.0;1090.0;20.0;10.0;20.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>846</x>
       <y>27</y>
-      <w>738</w>
+      <w>855</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>m1=0..*
@@ -980,85 +923,6 @@ Creates &gt;
 lt=&lt;-x
 
 m2=1</panel_attributes>
-    <additional_attributes>780.0;80.0;780.0;20.0;10.0;20.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1656</x>
-      <y>774</y>
-      <w>225</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-CommercialBanner
---
-+ banner: String {NotBlank,URL}
-
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1899</x>
-      <y>774</y>
-      <w>225</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-NotCommercialBanner
---
-+ banner: String {NotBlank, URL}
-
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>2007</x>
-      <y>576</y>
-      <w>243</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>A sponsor cannot create any commercial 
-banner unless he/she has registeres a 
-credit card.
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1764</x>
-      <y>684</y>
-      <w>135</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;130.0;70.0;10.0;70.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1872</x>
-      <y>684</y>
-      <w>153</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;150.0;70.0;150.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1872</x>
-      <y>585</y>
-      <w>153</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>10.0;10.0;150.0;30.0</additional_attributes>
+    <additional_attributes>910.0;80.0;910.0;30.0;10.0;20.0;10.0;60.0</additional_attributes>
   </element>
 </diagram>
