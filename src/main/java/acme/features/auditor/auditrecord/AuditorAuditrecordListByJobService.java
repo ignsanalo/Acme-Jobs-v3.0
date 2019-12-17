@@ -24,6 +24,7 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 		assert request != null;
 
 		return true;
+
 	}
 
 	@Override
@@ -41,11 +42,11 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 		assert request != null;
 
 		Collection<Auditrecord> result;
-		int JobID;
+		int jobID;
 
-		JobID = request.getModel().getInteger("id");
+		jobID = request.getModel().getInteger("id");
 
-		result = this.repository.findManyByJobId(JobID);
+		result = this.repository.findManyByJobId(jobID);
 		result.removeAll(this.repository.findManyAuditByActive(false));
 
 		return result;

@@ -329,6 +329,7 @@
 	</bean>
 	
 	
+	
 	<!-- Application -->
 	
 	<bean name="application1" class="acme.entities.applications.Application">
